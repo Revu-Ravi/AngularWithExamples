@@ -1,0 +1,26 @@
+<h1>Interpolation</h1>
+<h1>My name is {{name}}</h1>
+<h1>name in capital letters {{name.toUpperCase()}}</h1>
+<h1>name in small letters {{name.toLowerCase()}}</h1>
+
+<hr>
+<h4>name from method {{getMyName()}}</h4>
+
+<hr>
+<h1>print emp object {{emp|json}}</h1>
+<h1>name from emp object {{emp.fname}}</h1>
+<h1>age from emp object {{emp.age}}</h1>
+<h1>age from emp object {{emp.age>10}}</h1>
+<h4>{{emp.lname ? emp.lname : 'no lname is available'}}</h4>
+<!-- you can use expressions -->
+<hr><h4>{{(24+26-10)*2}}</h4>
+<!-- Assigments are not allowed 
+<h4>{{x=20}}</h4>
+<h4>{{x++}}</h4>-->
+
+<hr><h4>{{employee|json}}</h4>
+<h4>{{employee[0].name}}</h4>
+
+<hr><img class="image" src={{imgURL}} alt="image">
+
+

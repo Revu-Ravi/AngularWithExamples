@@ -1,0 +1,31 @@
+<!-- <p>api-calls works!</p>
+<button  mat-flat-button color="primary" (click)="getUsers()">User Details</button> -->
+
+<form #myForm="ngForm">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-6">
+                <div class="form-group">
+                  <label >Name</label>
+                    <input type="text" 
+                    #name="ngModel" 
+                    [class.is-invalid]="name.invalid && name.touched"
+                    class="form-control" placeholder="User name" 
+                    aria-label="name" aria-describedby="basic-addon1" 
+                    [(ngModel)]="newUser.name" name="name" required><br>
+                    <label >Email</label>
+                    <input type="text" class="form-control"  placeholder="Email" aria-label="Email" aria-describedby="basic-addon1" 
+                    [(ngModel)]="newUser.email" name="email" #email="ngModel" 
+                    [class.is-invalid]="email.invalid && email.touched"  required><br>
+                    <label >Password</label>
+                    <input type="password" class="form-control" placeholder="password" aria-label="password" aria-describedby="basic-addon1"
+                    #password="ngModel" [class.is-invalid]="password.invalid &&password.touched" [(ngModel)]="newUser.password" name="Password" required><br>
+                  </div>
+            </div>
+        </div>
+        <button  mat-flat-button color="primary" (click)="getUsers()">Register</button>
+    </div>
+    </form>
+    <div>
+      {{users|json}}
+    </div>

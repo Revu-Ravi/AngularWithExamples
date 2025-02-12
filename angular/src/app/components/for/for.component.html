@@ -1,0 +1,18 @@
+<h1><u>For Directive</u></h1>
+<h2 *ngFor="let x of names">{{x}}</h2><hr>
+<h2 *ngFor="let x of names;index as i"> {{i}} - - >{{x}}</h2><hr>
+<h2 *ngFor="let x of names;even as e"> {{e}} - - >{{x}}</h2><hr>
+<h2 *ngFor="let x of names;odd as o"> {{o}} - - >{{x}}</h2><hr>
+
+<h2 *ngFor="let x of emp | keyvalue"> {{x.key}} - - >{{x.value}}</h2><hr>
+
+<h2 *ngFor="let x of emp"> 
+    <h2 *ngFor="let y of x |keyvalue">{{y.key}} - - >{{y.value}}</h2></h2><br>
+
+
+
+
+
+
+
+

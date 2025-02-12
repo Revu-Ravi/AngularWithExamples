@@ -1,0 +1,19 @@
+<h1>Event binding</h1>
+<button class="btn btn-info" (click)="onClick()" >click me</button>
+<h2>{{onClick()}}</h2>
+<button class="btn btn-success" (dblclick)="onDblClick()" >double click me</button>
+<button class="btn btn-danger" (mouseover)="onOver()" >mouse over</button>
+<button class="btn btn-dark" (mouseout)="onOut()" >mouse out</button>
+<button class="btn btn-primary" (mousemove)="onMove()" >mouse move</button><hr>
+
+<input type="text" value="key down" (keydown)="kDown()">
+<input type="text" value="key up" (keyup)="kUp()">
+<input type="text" value="key press" (keypress)="kPress()"><hr>
+
+<!-- <input type="text" (focus)="onFocus()" > -->
+<input type="text" (focusin)="onFocus()" >
+<!-- <input type="text" (focusout)="onFocusOut()" > -->
+<input type="text" (blur)="onFocusOut()">
+<input type="text" (input)="onInput()">
+
+

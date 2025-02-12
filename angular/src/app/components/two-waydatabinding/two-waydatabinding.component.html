@@ -1,0 +1,18 @@
+<h1>Two-way databinding</h1>
+<input type="text" #name placeholder="enter name">
+<input type="text" #cource placeholder="enter cource name">
+<input type="text" #fee placeholder="enter fees">
+
+<!-- <button mat-button color="primary">My name</button>
+<button mat-flat-button color="primary">My name</button> --><br>
+
+<button mat-raised-button color="primary" (click)="onClick(name.value)">My name</button>
+<button mat-raised-button color="accent" (click)="onClick1(cource.value)">My cource</button>
+<button mat-raised-button color="warn" (click)="onClick2(fee.value)">My fee</button>
+<br>
+<h3>name: {{myName}}</h3>
+<h3>cource: {{myCource}}</h3>
+<h3>fee: {{myFee}}</h3>
+<br>
+<input type="text" [(ngModel)]="myText" placeholder="enter name">
+<h2>{{myText}}</h2>

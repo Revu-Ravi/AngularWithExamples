@@ -1,0 +1,5 @@
+<h2>Course Names: </h2>
+<h3 *ngFor="let x of cource" (click)="onSelect(x)" >
+    {{x.name}}
+</h3>
+<h3>{{errMsg}}</h3>

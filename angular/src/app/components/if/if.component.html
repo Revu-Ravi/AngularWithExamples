@@ -1,0 +1,5 @@
+<h1>If Directive</h1>
+<h3 *ngIf="check" style="color: aqua;">My name is ravi i am working in accenture</h3>
+<h3 *ngIf="check; then tblock else eblock"  ></h3>
+<ng-template #tblock ><h3 style="color: blue;">It is true block the statement is true </h3></ng-template>
+<ng-template #eblock >It is else block the statement is false </ng-template>

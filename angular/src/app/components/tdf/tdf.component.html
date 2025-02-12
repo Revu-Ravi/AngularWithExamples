@@ -1,0 +1,77 @@
+<h1>Welcome to template driven forms</h1>
+
+<form #myForm="ngForm">
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-6">
+            <div class="form-group">
+              <label >Username</label>
+                <input type="text" 
+                #name="ngModel" 
+                [class.is-invalid]="name.invalid && name.touched"
+                class="form-control" placeholder="User name" 
+                aria-label="name" aria-describedby="basic-addon1" 
+                [(ngModel)]="userDetails.name" name="name" required><br>
+                <!-- <div class="formData">
+                  <h3>{{name.untouched}}</h3>
+                </div> -->
+                <label >Email</label>
+                <input type="text" class="form-control"  placeholder="Email" aria-label="Email" aria-describedby="basic-addon1" 
+                [(ngModel)]="userDetails.email" name="email" #email="ngModel" 
+                [class.is-invalid]="email.invalid && email.touched" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required><br>
+                <label >Password</label>
+                <input type="password" class="form-control" placeholder="password" aria-label="password" aria-describedby="basic-addon1"
+                #password="ngModel" [class.is-invalid]="password.invalid &&password.touched" [(ngModel)]="userDetails.password" name="Password" required><br>
+              </div>
+        </div>
+        <div class="col-6"> <label >Gender :</label>
+            <div class="form-check form-check-inline">
+             
+                <input class="form-check-input" type="radio" name="gender" id="inlineRadio1" value="male" 
+                #gender="ngModel" [class.is-invalid]="gender.invalid &&gender.touched" [(ngModel)]="userDetails.gender" required>
+                <label class="form-check-label" for="inlineRadio1">male</label>
+            </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="gender" id="inlineRadio2" value="female" 
+                #gender="ngModel" [class.is-invalid]="gender.invalid &&gender.touched" [(ngModel)]="userDetails.gender" required>
+                <label class="form-check-label" for="inlineRadio1">female</label>
+              </div>
+
+              <div class="input-group">
+                <label >Course :</label>
+              <select class="form-select" id="inputGroupSelect01" [(ngModel)]="userDetails.course" name="course">
+                <option value="default" >Choose...</option>
+                <option *ngFor="let x of course">{{x}}</option> 
+              </select>
+              </div>
+
+              <div class="form-check">
+                
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked [(ngModel)]="userDetails.remember" name="Remember">
+                <label class="form-check-label" for="flexCheckChecked">
+                 Remember me
+                </label>
+              </div>
+
+            </div>
+    </div>
+    <button  mat-flat-button color="primary" (click)="getUserDetails()">Register</button>
+</div>
+<!-- <div class="formData">
+  <h3>{{myForm.value| json}}</h3>
+</div> -->
+<!-- <div class="formData">
+  <h3>{{userDetails| json}}</h3>
+</div> -->
+<div >
+  <h3 *ngFor="let user of users">{{user.firstName}}</h3>
+</div>
+
+</form>
+
+
+<!-- <div class="form-group">
+    <label >User name:</label>
+    <input type="text" class="form-control" name="username" placeholder="enter user name" >
+</div>
+<button type="submit" class="btn btn-primary">Submit</button> -->
