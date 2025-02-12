@@ -18,9 +18,9 @@ export class APICallsComponent {
   getUsers(){
     this.courceService.addUsers(this.newUser).subscribe((data)=>{
        this.users= data
-      // data.users.forEach((element:any) => {
-      //   console.log(element)
-      // });
+      data.users.forEach((element:any) => {
+        console.log(element)
+      });
         console.log(data)
      
     })
