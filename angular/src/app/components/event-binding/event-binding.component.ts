@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./event-binding.component.css']
 })
 export class EventBindingComponent {
-
+data:any;
   onClick(){
        console.log("you click me")
   }

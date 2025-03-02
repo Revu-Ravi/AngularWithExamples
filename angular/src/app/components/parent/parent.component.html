@@ -1,3 +1,5 @@
 <h1>Parent component</h1>
-<h3>child date: {{dataFromChild}}</h3>
-<app-child  (cData) = "dataFromChild = $event" [pPostman]="pData"></app-child>
+<!-- <h3>child date: {{dataFromChild}}</h3> -->
+<!-- <app-child  (cData) = "dataFromChild = $event" [pPostman]="pData"></app-child> -->
+ <h3>child name is {{cName}} </h3>
+<app-child (childName)="cName=$event" [daddy]="parentName"></app-child>

@@ -7,22 +7,48 @@ import { CourceService } from 'src/app/service/cource.service';
   styleUrls: ['./api-calls.component.css']
 })
 export class APICallsComponent {
-  users:any;
+  users:any[]=[];
   newUser={
-    name:'',
-    email:'',
-    password:'',
+    userId:'',
+    title:'',
+    body:'',
   }
   constructor(private courceService:CourceService){}
 
   getUsers(){
-    this.courceService.addUsers(this.newUser).subscribe((data)=>{
+    this.courceService.getUsers().subscribe((data:any)=>{
        this.users= data
-      data.users.forEach((element:any) => {
-        console.log(element)
-      });
-        console.log(data)
-     
-    })
+      //  this.users.forEach((element:any) => {
+      //     console.log(element)
+      //   });
+    },
+    (err)=>{
+       console.log("error",err)
+    });
+    
+  }
+  addUsers(){
+    this.courceService.addUsers(this.newUser).subscribe((data:any)=>{
+       this.users= [data]
+      // data.users.forEach((element:any) => {
+      //   console.log(element)
+      // });
+        console.log(this.users)    
+    },
+    (err)=>{
+       console.log("error",err)
+    });
+  }
+  deleteUsers(){
+    this.courceService.deleteUsers(100).subscribe((data:any)=>{
+       this.users= [data]
+      // data.users.forEach((element:any) => {
+      //   console.log(element)
+      // });
+        console.log("delete")    
+    },
+    (err)=>{
+       console.log("error",err)
+    });
   }
 }

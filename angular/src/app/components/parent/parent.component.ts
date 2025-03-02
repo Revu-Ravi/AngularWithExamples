@@ -6,6 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./parent.component.css']
 })
 export class ParentComponent {
-public pData=" this data from parent"
-public dataFromChild=''
+// public pData=" this data from parent"
+// public dataFromChild=''
+parentName:any="venky"
+cName:string=''
 }

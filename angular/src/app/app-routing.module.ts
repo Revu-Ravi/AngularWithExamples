@@ -9,6 +9,7 @@ import { CourceDetailsComponent } from './components/cource-details/cource-detai
 import { SelectedItemsComponent } from './components/selected-items/selected-items.component';
 import { AdminHomeComponent } from './components/admin-home/admin-home.component';
 import { adminAccessGuard } from './admin-access.guard';
+import { APICallsComponent } from './components/api-calls/api-calls.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'/home',pathMatch:'full'},
@@ -19,7 +20,8 @@ const routes: Routes = [
   {path:'courceDetails',component:CourceDetailsComponent},
   {path:'for',component:ForComponent},
   {path:'selectedItems/:id',component:SelectedItemsComponent},
-  {path:'**',component:PageNotFoundComponent}
+  {path:'apiCalls', component:APICallsComponent},
+  {path:'**',component:PageNotFoundComponent},
 ];
 
 @NgModule({

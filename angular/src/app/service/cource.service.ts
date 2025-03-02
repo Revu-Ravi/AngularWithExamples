@@ -9,8 +9,8 @@ export class CourceService {
 
   constructor(private _http:HttpClient) { }
   private _url='../../assets/courcedetails.json'
-  private _url1='https://dummyjson.com/users'
-  private _url2='https://jsonplaceholder.typicode.com/users'
+  private _url1='https://jsonplaceholder.typicode.com/posts/1'
+  private _url2='https://jsonplaceholder.typicode.com/posts'
 
   getCourceInfo(): Observable<any>{
     return this._http.get<any>(this._url)
@@ -21,9 +21,12 @@ export class CourceService {
   }
 
   getUsers(){
-    return this._http.get<any>(this._url2)
+    return this._http.get<any>(this._url1)
   }
   addUsers(newUser:any){
     return this._http.post<any>(this._url2, newUser)
+  }
+  deleteUsers(id:number){
+    return this._http.delete<any>(this._url2+`${id}`)
   }
 }

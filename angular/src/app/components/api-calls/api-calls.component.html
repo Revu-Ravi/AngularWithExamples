@@ -12,20 +12,24 @@
                     [class.is-invalid]="name.invalid && name.touched"
                     class="form-control" placeholder="User name" 
                     aria-label="name" aria-describedby="basic-addon1" 
-                    [(ngModel)]="newUser.name" name="name" required><br>
+                    [(ngModel)]="newUser.userId" name="name" required><br>
                     <label >Email</label>
                     <input type="text" class="form-control"  placeholder="Email" aria-label="Email" aria-describedby="basic-addon1" 
-                    [(ngModel)]="newUser.email" name="email" #email="ngModel" 
+                    [(ngModel)]="newUser.title" name="email" #email="ngModel" 
                     [class.is-invalid]="email.invalid && email.touched"  required><br>
                     <label >Password</label>
                     <input type="password" class="form-control" placeholder="password" aria-label="password" aria-describedby="basic-addon1"
-                    #password="ngModel" [class.is-invalid]="password.invalid &&password.touched" [(ngModel)]="newUser.password" name="Password" required><br>
+                    #password="ngModel" [class.is-invalid]="password.invalid &&password.touched" [(ngModel)]="newUser.body" name="Password" required><br>
                   </div>
             </div>
         </div>
-        <button  mat-flat-button color="primary" (click)="getUsers()">Register</button>
+        <button  mat-flat-button color="primary" (click)="addUsers()">Register</button>
+       <div>
+        <button  mat-flat-button color="primary" (click)="deleteUsers()">delete</button>
+
+       </div>
     </div>
     </form>
-    <div>
-      {{users|json}}
+    <div *ngFor="let user of users">
+      {{user.name}}
     </div>
